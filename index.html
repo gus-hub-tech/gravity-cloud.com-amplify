@@ -15,69 +15,31 @@
 </head>
 
 <body>
-	<script>
-		function submitForm(event) {
-			event.preventDefault();
-
-			const form = document.getElementById('sendMail');
-			const formData = new FormData(form);
-
-			const data = {
-				name: formData.get('name') || 'undefined',
-				email: formData.get('email') || 'undefined',
-				message: formData.get('message') || 'undefined'
-			};
-
-			$.ajax({
-				type: "POST",
-				url: "https://tmlwb24aff.execute-api.af-south-1.amazonaws.com/Production_Stage/Contact_Me",
-				dataType: "json",
-				crossDomain: true,
-				contentType: "application/json; charset=utf-8",
-				data: JSON.stringify({
-					name: data.name,
-					email: data.email,
-					message: data.message
+<script>
+	// Attach the submitForm function to the form's submit event
+	document.addEventListener('DOMContentLoaded', function () {
+		const form = document.querySelector('form[action*="SendMailFunctionSES"]');
+		if (form) {
+			form.addEventListener('submit', function (event) {
+				event.preventDefault();
+				const formData = new FormData(form);
+				fetch('https://tmlwb24aff.execute-api.af-south-1.amazonaws.com/Production_Stage/SendMailFunctionSES', {
+					method: 'POST',
+					body: formData
 				})
-					.then(response => response.json())
-					.then(data => {
-						console.log('Success:', data);
+					.then(response => response.text())
+					.then(result => {
 						alert('Message sent successfully!');
+						form.reset();
 					})
-					.catch((error) => {
+					.catch(error => {
 						console.error('Error:', error);
 						alert('An error occurred. Please try again.');
 					});
-			}
-
-// Attach the submitForm function to the form's submit event
-document.getElementById('sendMail').addEventListener('submit', submitForm);
-////////////////////////////////////////////////////////////////////////////          
-		</body > script >
-				function submitForm(event) {
-					event.preventDefault(); // Prevent default form submission
-					// Get form data
-					const form = document.getElementById('contactForm');
-					const formData = new FormData(form);
-					// Send data to Lambda function
-					URL('https://tmlwb24aff.execute-api.af-south-1.amazonaws.com/Production_Stage/SendMailFunctionSES', {
-						method: 'POST',
-						body: formData
-					})
-						.then(response => response.text())
-						.then(result => {
-							alert('Message sent successfully!');
-							form.reset(); // Clear the form
-						})
-						.catch(error => {
-							console.error('Error:', error);
-							alert('An error occurred. Please try again.');
-						});
-				}
-			// Attach the submitForm function to the form's submit event
-			document.getElementById('contactForm').addEventListener('submit', submitForm);
-
-	</script>
+			});
+		}
+	});
+</script>
 </body>
 
 </html>
