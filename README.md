@@ -54,7 +54,7 @@ To run locally:
 
 1. **Clone the repo**
     ```bash
-    git clone https://github.com/gravitykloud-tech/gravity-cloud.com.git
+    https://github.com/gravitykloud-tech/amplify.v2-.prod.git
     cd gravity-cloud.com
     ```
 
