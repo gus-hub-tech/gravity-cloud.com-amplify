@@ -1,294 +1,343 @@
 <!DOCTYPE HTML>
 
 <html>
-	<head>
-		<title>gus-cloud.com</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<script language="JavaScript" type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	</head>
-	<body>
-	<script>
-	function submitForm(event) {
-    event.preventDefault();
-    
-    const form = document.getElementById('sendMail');
-    const formData = new FormData(form);
-    
-    const data = {
-        name: formData.get('name') || 'undefined',
-        email: formData.get('email') || 'undefined',
-        message: formData.get('message') || 'undefined'
-    };
 
-    $.ajax({
-        type: "POST",
-        url: "https://tmlwb24aff.execute-api.af-south-1.amazonaws.com/Production_Stage/Contact_Me",
-        dataType: "json",
-        crossDomain: true,
-        contentType: "application/json; charset=utf-8",
-        data: JSON.stringify({
-            name: data.name,
-            email: data.email,
-            message: data.message
-        })
-    .then(response => response.json())
-    .then(data => {
-        console.log('Success:', data);
-        alert('Message sent successfully!');
-    })
-    .catch((error) => {
-        console.error('Error:', error);
-        alert('An error occurred. Please try again.');
-    });
-}
+<head>
+	<title>gus-cloud.com</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" />
+	</noscript>
+	<script language="JavaScript" type="text/javascript"
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+	<script>
+		function submitForm(event) {
+			event.preventDefault();
+
+			const form = document.getElementById('sendMail');
+			const formData = new FormData(form);
+
+			const data = {
+				name: formData.get('name') || 'undefined',
+				email: formData.get('email') || 'undefined',
+				message: formData.get('message') || 'undefined'
+			};
+
+			$.ajax({
+				type: "POST",
+				url: "https://tmlwb24aff.execute-api.af-south-1.amazonaws.com/Production_Stage/Contact_Me",
+				dataType: "json",
+				crossDomain: true,
+				contentType: "application/json; charset=utf-8",
+				data: JSON.stringify({
+					name: data.name,
+					email: data.email,
+					message: data.message
+				})
+					.then(response => response.json())
+					.then(data => {
+						console.log('Success:', data);
+						alert('Message sent successfully!');
+					})
+					.catch((error) => {
+						console.error('Error:', error);
+						alert('An error occurred. Please try again.');
+					});
+			}
 
 // Attach the submitForm function to the form's submit event
 document.getElementById('sendMail').addEventListener('submit', submitForm);
 ////////////////////////////////////////////////////////////////////////////          
-		</body>script>
-		function submitForm(event) {
-			event.preventDefault(); // Prevent default form submission
-			// Get form data
-			const form = document.getElementById('contactForm');
-			const formData = new FormData(form);
-			// Send data to Lambda function
-			URL('https://tmlwb24aff.execute-api.af-south-1.amazonaws.com/Production_Stage/SendMailFunctionSES', {
-				method: 'POST',
-				body: formData
-			})
-			.then(response => response.text())
-			.then(result => {
-				alert('Message sent successfully!');
-				form.reset(); // Clear the form
-			})
-			.catch(error => {
-				console.error('Error:', error);
-				alert('An error occurred. Please try again.');
-			});
-		}
-    // Attach the submitForm function to the form's submit event
-    document.getElementById('contactForm').addEventListener('submit', submitForm);
-	
-		</script>
-	</body>
+		</body > script >
+				function submitForm(event) {
+					event.preventDefault(); // Prevent default form submission
+					// Get form data
+					const form = document.getElementById('contactForm');
+					const formData = new FormData(form);
+					// Send data to Lambda function
+					URL('https://tmlwb24aff.execute-api.af-south-1.amazonaws.com/Production_Stage/SendMailFunctionSES', {
+						method: 'POST',
+						body: formData
+					})
+						.then(response => response.text())
+						.then(result => {
+							alert('Message sent successfully!');
+							form.reset(); // Clear the form
+						})
+						.catch(error => {
+							console.error('Error:', error);
+							alert('An error occurred. Please try again.');
+						});
+				}
+			// Attach the submitForm function to the form's submit event
+			document.getElementById('contactForm').addEventListener('submit', submitForm);
+
+	</script>
+</body>
+
 </html>
 
-	</head>
-	<body class="is-preload">
+</head>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+<body class="is-preload">
 
-				<!-- Header -->
-					<header id="header">
-						<div class="logo">
-							<span class="icon fa-gem"></span>
-						</div>
-						<div class="content">
-							<div class="inner">
-								<h1>Cloud Evangilist</h1>
-								<p>Gustav V. Kiewiets <a href="https://s3.af-south-1.amazonaws.com/gravitykloud.tech/AWS%2BCertified%2BCloud%2BPractitioner.pdf">Certification</a> Resume<br />
-								Download <a href="https://s3.af-south-1.amazonaws.com/gravitykloud.tech/Gustav_Kiewiets_Resume.pdf">Link</a> </p>
-							</div>
-						</div>
-						<nav>
-							<ul>
-								<li><a href="#intro">Intro</a></li>
-								<li><a href="#work">Work</a></li>
-								<li><a href="#github">Github</a></li>
-								<li><a href="#contact">Contact</a></li>
-								<!--<li><a href="#elements">Elements</a></li>-->
-							</ul>
-						</nav>
-					</header>
+	<!-- Wrapper -->
+	<div id="wrapper">
 
-				<!-- Main -->
-					<div id="main">
+		<!-- Header -->
+		<header id="header">
+			<div class="logo">
+				<span class="icon fa-gem"></span>
+			</div>
+			<div class="content">
+				<div class="inner">
+					<h1>Cloud Evangilist</h1>
+					<p>Gustav V. Kiewiets <a
+							href="https://s3.af-south-1.amazonaws.com/gravitykloud.tech/AWS%2BCertified%2BCloud%2BPractitioner.pdf">Certification</a>
+						Resume<br />
+						Download <a
+							href="https://s3.af-south-1.amazonaws.com/gravitykloud.tech/Gustav_Kiewiets_Resume.pdf">Link</a>
+					</p>
+				</div>
+			</div>
+			<nav>
+				<ul>
+					<li><a href="#intro">Intro</a></li>
+					<li><a href="#work">Work</a></li>
+					<li><a href="#github">Github</a></li>
+					<li><a href="#contact">Contact</a></li>
+					<!--<li><a href="#elements">Elements</a></li>-->
+				</ul>
+			</nav>
+		</header>
 
-						<!-- Intro -->
-						<article id="intro">
-							<h2 class="major">Introduction</h2>
-							<span class="image main"><img src="images/intro.jpg" alt="" /></span>
-							
-						</p>I am a Cloud Computing Professional with expertise in AWS services and Linux systems administration. Coming from a medical background, I successfully transitioned to IT in 2020 through the AWS re/Start program, I have developed comprehensive knowledge in cloud technologies, automation, and DevOps practices while maintaining AWS certifications.
-						</p>My core competencies include Linux systems administration, scripting, automation, and Python programming. I have extensive experience with essential DevOps tools. My technical expertise spans networking, security, and various AWS services, allowing me to deliver robust cloud solutions.
-						I am characterized by my strong work ethic, dedication to excellence, and innovative problem-solving abilities. I excel in high-pressure environments and approach challenges with thoroughness and precision. My background in healthcare combined with technical expertise gives me a unique perspective in understanding and meeting business needs. <a href="#work"> </a></p>
-						<p>At the core i am a life-long learner that enjoys being int the forefront of cloud innovative technologies that simplify complex solutions. I love using my ever-growing skills to experiment,build projects and find the best possible way to understand and explain cloud concepts using simple illustrations that resonate with people.</p>
-						</article>
+		<!-- Main -->
+		<div id="main">
+
+			<!-- Intro -->
+			<article id="intro">
+				<h2 class="major">Introduction</h2>
+				<span class="image main"><img src="images/intro.jpg" alt="" /></span>
+
+				</p>I am a Cloud Computing Professional with expertise in AWS services and Linux systems administration.
+				Coming from a medical background, I successfully transitioned to IT in 2020 through the AWS re/Start
+				program, I have developed comprehensive knowledge in cloud technologies, automation, and DevOps
+				practices while maintaining AWS certifications.</p>
+				</p>My core competencies include Linux systems administration, scripting, automation, and Python
+				programming. I have extensive experience with essential DevOps tools. My technical expertise spans
+				networking, security, and various AWS services, allowing me to deliver robust cloud solutions.
+				I am characterized by my strong work ethic, dedication to excellence, and innovative problem-solving
+				abilities. I excel in high-pressure environments and approach challenges with thoroughness and
+				precision. My background in healthcare combined with technical expertise gives me a unique perspective
+				in understanding and meeting business needs.</p>
+				<p>At the core i am a life-long learner that enjoys being int the forefront of cloud innovative
+				technologies that simplify complex solutions. I love using my ever-growing skills to
+				experiment,build projects and find the best possible way to understand and explain cloud concepts
+				using simple illustrations that resonate with people.</p>
+			</article>
 
 
 
-						<!-- Work -->
-						<article id="work">
-							<h2 class="major">Experience</h2>
-							<span class="image main"><img src="images/experience.jpg" alt="" /></span>
-							<h3>Solutions Archirect, Praesignis Randburg</h3>
-							
-								<div class="case-study max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-lg">
-		
-									<div class="mb-8">
-										<p class="text-gray-700 leading-relaxed">
-											Led the development of a highly available three-tier web architecture on AWS to handle dynamic traffic while maintaining security and performance.
-										</p>
-									</div>
-								
-									<div class="mb-8">
-										<p class="text-gray-700 leading-relaxed">
-											Created a comprehensive infrastructure using EC2, Aurora MySQL, and load balancers across multiple availability zones. 
-											Deployed a React.js frontend with Node.js backend, supported by automated scaling and monitoring systems. 
-											Established robust security through strategic IAM roles and security groups.
-										</p>
-									</div>
-								
-									<div class="mb-8">
-										<ul class="list-disc pl-6 space-y-2 text-gray-700">
-											<li>VPC with 6 subnets across 2 availability zones</li>
-											<li>Multi-AZ Aurora MySQL database</li>
-											<li>Custom AMIs and launch templates for auto-scaling</li>
-											<li>Comprehensive health monitoring system</li>
-											<li>Multi-layered security configuration</li>
-										</ul>
-									</div>
-								
-									<div class="mb-4">
-										<p class="text-gray-700 leading-relaxed">
-											Successfully delivered a production-ready system featuring high availability, automated scaling, complete redundancy, 
-											and secure access controls - all following AWS best practices. The solution demonstrated how cloud technologies can 
-											create adaptable, reliable infrastructure that scales with business needs.
-										</p>
-										<h3>Linux Systems Administration, Xgile I.T Johannesburg | Midrand</h3>
-										<ul>
-											<div class="case-study 
-												<h1 class="text 0.875rem font-bold mb-6 text-gray-800">Virtualization Mastery: Orchestrating a Reliable Hybrid Environment</h1>
-												
-												<div class="mb-8">
-													<p class="text-gray-700 leading-relaxed">
-														Led the deployment and management of a virtualized infrastructure supporting multiple operating systems and business-critical applications, focusing on performance optimization and resource efficiency.
-													</p>
-												</div>
-											
-												<div class="mb-8">
-													<p class="text-gray-700 leading-relaxed">
-														Built a comprehensive virtualization platform supporting both Windows and Linux systems, featuring automated deployment processes and robust monitoring solutions. Established resource management policies and backup procedures to ensure system reliability and optimal performance.
-													</p>
-												</div>
-											
-												<div class="mb-8">
-													<ul class="list-disc pl-6 space-y-2 text-gray-700">
-														<li>Successfully integrated multiple operating systems in a unified environment</li>
-														<li>Optimized resource allocation and utilization</li>
-														<li>Reduced hardware costs through system consolidation</li>
-														<li>Enhanced system reliability with proactive monitoring</li>
-														<li>Implemented streamlined VM deployment processes</li>
-													</ul>
-												</div>
-											
-												<div class="mb-4">
-													<p class="text-gray-700 leading-relaxed">
-														Delivered a cost-effective, high-performing hybrid environment that improved operational efficiency while reducing hardware costs. 
-														The solution provided the organization with the agility to adapt to changing business needs while maintaining robust system 
-														reliability and performance.
-													</p>
-												</div>
-											</div>
-										
-										</ul>
-										</article>
+			<!-- Work -->
+			<article id="work">
+				<h2 class="major">Experience</h2>
+				<span class="image main"><img src="images/experience.jpg" alt="" /></span>
+				<h3>Solutions Archirect, Praesignis Randburg</h3>
 
-								</ul>
-							</article>
+				<div class="case-study max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-lg">
 
-						<!-- Github -->
-						<article id="github">
-							<h2 class="major">Projects to Github Repo</h2>
-							<span class="image main"><img src="https://s3.af-south-1.amazonaws.com/gravitykloud.tech/Explore+GitHub.jpg" alt="" /></span>
-						
-							<div class="project">
-								<h3>Weather-Dashboard</h3>
-								<a href="https://github.com/gravitykloud-tech/30days-weather-dashboard.git" class="button">Weather Data Collection System</a>
-							</div>
-						
-							<div class="project">
-								<h3>Sport Alert System & Notifications</h3>
-								<a href="https://github.com/gravitykloud-tech/game-day-notifications.git" class="button">Sport Alert System</a>
-							</div>
-						
-							<div class="project">
-								<h3>AWS Artificial & Machine Learning | Methodologies</h3>
-								<a href="https://s3.af-south-1.amazonaws.com/gravitykloud.tech/AI+ML+Cert.png" class="button">AWS AI/ML-Certification</a>
-							</div>
-						
-							<div class="project">
-								<h3>Sports DataLake</h3>
-								<a href="https://github.com/gravitykloud-tech/NBADataLake.git" class="button">Data-Lake</a>
-							</div>
-						
-							<div class="project">
-								<h3>API Management System / Containerized</h3>
-								<a href="https://github.com/gravitykloud-tech/containerized-sports-api.git" class="button">API Management System</a>
-
-							</ul>		
-							</article>
-
-						<!-- Contact -->
-							<article id="contact">
-								<h2 class="major">Contact</h2>
-								<form method="post" action="https://tmlwb24aff.execute-api.af-south-1.amazonaws.com/Production_Stage/SendMailFunctionSES">
-									<div class="fields">
-										<div class="field half">
-											<label for="name">Name</label>
-											<input type="text" name="name" id="name" />
-										</div>
-										<div class="field half">
-											<label for="email">Email</label>
-											<input type="text" name="email" id="email" />
-										</div>
-										<div class="field">
-											<label for="message">Message</label>
-											<textarea name="message" id="message" rows="4"></textarea>
-										</div>
-									</div>
-									<ul class="actions">
-										<li><input type="submit" value="Send Message" class="primary" onclick="submitForm(event)" /></li>
-										<li><input type="reset" value="Reset" /></li>
-									</ul>
-								</form>
-								<ul class="icons">
-									<li><a href="https://youtube.com/@gravitykloud.t3ch" class="icon brands fa-youtube"><span class="label">Youtube</span></a></li>
-									<li><a href="https://www.linkedin.com/in/gus88" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
-									<li><a href="https://medium.com/@gustav.kiewiets" class="icon brands fa-medium"><span class="label">Medium</span></a></li>
-									<li><a href="https://github.com/gravitykloud-tech" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-									
-								</ul>
-							</article>
-							
-
-									</form>
-								</section>
-
-							</article>
-
+					<div class="mb-8">
+						<p class="text-gray-700 leading-relaxed">
+							Led the development of a highly available three-tier web architecture on AWS to handle
+							dynamic traffic while maintaining security and performance.
+						</p>
 					</div>
 
-				<!-- Footer -->
-					<footer id="footer">
-						<p class="copyright">&copy;|<a href="https://www.upwork.com/freelancers/~010fcd96c6567c9a48?mp_source=share">Freelance Work</a></p>
-					</footer>
+					<div class="mb-8">
+						<p class="text-gray-700 leading-relaxed">
+							Created a comprehensive infrastructure using EC2, Aurora MySQL, and load balancers across
+							multiple availability zones.
+							Deployed a React.js frontend with Node.js backend, supported by automated scaling and
+							monitoring systems.
+							Established robust security through strategic IAM roles and security groups.
+						</p>
+					</div>
 
-			</div>
+					<div class="mb-8">
+						<ul class="list-disc pl-6 space-y-2 text-gray-700">
+							<li>VPC with 6 subnets across 2 availability zones</li>
+							<li>Multi-AZ Aurora MySQL database</li>
+							<li>Custom AMIs and launch templates for auto-scaling</li>
+							<li>Comprehensive health monitoring system</li>
+							<li>Multi-layered security configuration</li>
+						</ul>
+					</div>
 
-		<!-- BG -->
-			<div id="bg"></div>
+					<div class="mb-4">
+						<p class="text-gray-700 leading-relaxed">
+							Successfully delivered a production-ready system featuring high availability, automated
+							scaling, complete redundancy,
+							and secure access controls - all following AWS best practices. The solution demonstrated how
+							cloud technologies can
+							create adaptable, reliable infrastructure that scales with business needs.
+						</p>
+						<h3>Linux Systems Administration, Xgile I.T Johannesburg | Midrand</h3>
+						<ul>
+							<div class="case-study 
+												<h1 class=" text 0.875rem font-bold mb-6 text-gray-800">Virtualization Mastery: Orchestrating a Reliable
+								Hybrid Environment</h1>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+								<div class="mb-8">
+									<p class="text-gray-700 leading-relaxed">
+										Led the deployment and management of a virtualized infrastructure supporting
+										multiple operating systems and business-critical applications, focusing on
+										performance optimization and resource efficiency.
+									</p>
+								</div>
 
-	</body>
+								<div class="mb-8">
+									<p class="text-gray-700 leading-relaxed">
+										Built a comprehensive virtualization platform supporting both Windows and Linux
+										systems, featuring automated deployment processes and robust monitoring
+										solutions. Established resource management policies and backup procedures to
+										ensure system reliability and optimal performance.
+									</p>
+								</div>
+
+								<div class="mb-8">
+									<ul class="list-disc pl-6 space-y-2 text-gray-700">
+										<li>Successfully integrated multiple operating systems in a unified environment
+										</li>
+										<li>Optimized resource allocation and utilization</li>
+										<li>Reduced hardware costs through system consolidation</li>
+										<li>Enhanced system reliability with proactive monitoring</li>
+										<li>Implemented streamlined VM deployment processes</li>
+									</ul>
+								</div>
+
+								<div class="mb-4">
+									<p class="text-gray-700 leading-relaxed">
+										Delivered a cost-effective, high-performing hybrid environment that improved
+										operational efficiency while reducing hardware costs.
+										The solution provided the organization with the agility to adapt to changing
+										business needs while maintaining robust system
+										reliability and performance.
+									</p>
+								</div>
+							</div>
+
+						</ul>
+			</article>
+
+			</ul>
+			</article>
+
+			<!-- Github -->
+			<article id="github">
+				<h2 class="major">Projects to Github Repo</h2>
+				<span class="image main"><img
+						src="https://s3.af-south-1.amazonaws.com/gravitykloud.tech/Explore+GitHub.jpg" alt="" /></span>
+
+				<div class="project">
+					<h3>Weather-Dashboard</h3>
+					<a href="https://github.com/gravitykloud-tech/30days-weather-dashboard.git" class="button">Weather
+						Data Collection System</a>
+				</div>
+
+				<div class="project">
+					<h3>Sport Alert System & Notifications</h3>
+					<a href="https://github.com/gravitykloud-tech/game-day-notifications.git" class="button">Sport Alert
+						System</a>
+				</div>
+
+				<div class="project">
+					<h3>AWS Artificial & Machine Learning | Methodologies</h3>
+					<a href="https://s3.af-south-1.amazonaws.com/gravitykloud.tech/AI+ML+Cert.png" class="button">AWS
+						AI/ML-Certification</a>
+				</div>
+
+				<div class="project">
+					<h3>Sports DataLake</h3>
+					<a href="https://github.com/gravitykloud-tech/NBADataLake.git" class="button">Data-Lake</a>
+				</div>
+
+				<div class="project">
+					<h3>API Management System / Containerized</h3>
+					<a href="https://github.com/gravitykloud-tech/containerized-sports-api.git" class="button">API
+						Management System</a>
+
+					</ul>
+			</article>
+
+			<!-- Contact -->
+			<article id="contact">
+				<h2 class="major">Contact</h2>
+				<form method="post"
+					action="https://tmlwb24aff.execute-api.af-south-1.amazonaws.com/Production_Stage/SendMailFunctionSES">
+					<div class="fields">
+						<div class="field half">
+							<label for="name">Name</label>
+							<input type="text" name="name" id="name" />
+						</div>
+						<div class="field half">
+							<label for="email">Email</label>
+							<input type="text" name="email" id="email" />
+						</div>
+						<div class="field">
+							<label for="message">Message</label>
+							<textarea name="message" id="message" rows="4"></textarea>
+						</div>
+					</div>
+					<ul class="actions">
+						<li><input type="submit" value="Send Message" class="primary" onclick="submitForm(event)" />
+						</li>
+						<li><input type="reset" value="Reset" /></li>
+					</ul>
+				</form>
+				<ul class="icons">
+					<li><a href="https://youtube.com/@gravitykloud.t3ch" class="icon brands fa-youtube"><span
+								class="label">Youtube</span></a></li>
+					<li><a href="https://www.linkedin.com/in/gus88" class="icon brands fa-linkedin"><span
+								class="label">Linkedin</span></a></li>
+					<li><a href="https://medium.com/@gustav.kiewiets" class="icon brands fa-medium"><span
+								class="label">Medium</span></a></li>
+					<li><a href="https://github.com/gravitykloud-tech" class="icon brands fa-github"><span
+								class="label">GitHub</span></a></li>
+
+				</ul>
+			</article>
+
+
+			</form>
+			</section>
+
+			</article>
+
+		</div>
+
+		<!-- Footer -->
+		<footer id="footer">
+			<p class="copyright">&copy;|<a
+					href="https://www.upwork.com/freelancers/~010fcd96c6567c9a48?mp_source=share">Freelance Work</a></p>
+		</footer>
+
+	</div>
+
+	<!-- BG -->
+	<div id="bg"></div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+</body>
+
 </html>
