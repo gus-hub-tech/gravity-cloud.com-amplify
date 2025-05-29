@@ -228,28 +228,27 @@
             if (form) {
                 form.addEventListener('submit', function (event) {
                     event.preventDefault();
-                    // Collect form data as JSON
-                    const data = {
-                        name: form.name.value,
-                        email: form.email.value,
-                        message: form.message.value
-                    };
+                    const formData = new URLSearchParams();
+                    formData.append('name', form.name.value);
+                    formData.append('email', form.email.value);
+                    formData.append('message', form.message.value);
+
                     fetch('https://tmlwb24aff.execute-api.af-south-1.amazonaws.com/Production_Stage/SendMailFunctionSES', {
                         method: 'POST',
                         headers: {
-                            'Content-Type': 'application/json'
+                            'Content-Type': 'application/x-www-form-urlencoded'
                         },
-                        body: JSON.stringify(data)
+                        body: formData.toString()
                     })
-                        .then(response => response.text())
-                        .then(result => {
-                            alert('Message sent successfully!');
-                            form.reset();
-                        })
-                        .catch(error => {
-                            console.error('Error:', error);
-                            alert('An error occurred. Please try again.');
-                        });
+                    .then(response => response.text())
+                    .then(result => {
+                        alert('Message sent successfully!');
+                        form.reset();
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        alert('An error occurred. Please try again.');
+                    });
                 });
             }
         });
