@@ -223,16 +223,23 @@
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
     <script>
-        // Attach the submitForm function to the form's submit event
         document.addEventListener('DOMContentLoaded', function () {
             const form = document.querySelector('form[action*="SendMailFunctionSES"]');
             if (form) {
                 form.addEventListener('submit', function (event) {
                     event.preventDefault();
-                    const formData = new FormData(form);
+                    // Collect form data as JSON
+                    const data = {
+                        name: form.name.value,
+                        email: form.email.value,
+                        message: form.message.value
+                    };
                     fetch('https://tmlwb24aff.execute-api.af-south-1.amazonaws.com/Production_Stage/SendMailFunctionSES', {
                         method: 'POST',
-                        body: formData
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(data)
                     })
                         .then(response => response.text())
                         .then(result => {
