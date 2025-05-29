@@ -15,31 +15,31 @@
 </head>
 
 <body>
-<script>
-	// Attach the submitForm function to the form's submit event
-	document.addEventListener('DOMContentLoaded', function () {
-		const form = document.querySelector('form[action*="SendMailFunctionSES"]');
-		if (form) {
-			form.addEventListener('submit', function (event) {
-				event.preventDefault();
-				const formData = new FormData(form);
-				fetch('https://tmlwb24aff.execute-api.af-south-1.amazonaws.com/Production_Stage/SendMailFunctionSES', {
-					method: 'POST',
-					body: formData
-				})
-					.then(response => response.text())
-					.then(result => {
-						alert('Message sent successfully!');
-						form.reset();
+	<script>
+		// Attach the submitForm function to the form's submit event
+		document.addEventListener('DOMContentLoaded', function () {
+			const form = document.querySelector('form[action*="SendMailFunctionSES"]');
+			if (form) {
+				form.addEventListener('submit', function (event) {
+					event.preventDefault();
+					const formData = new FormData(form);
+					fetch('https://tmlwb24aff.execute-api.af-south-1.amazonaws.com/Production_Stage/SendMailFunctionSES', {
+						method: 'POST',
+						body: formData
 					})
-					.catch(error => {
-						console.error('Error:', error);
-						alert('An error occurred. Please try again.');
-					});
-			});
-		}
-	});
-</script>
+						.then(response => response.text())
+						.then(result => {
+							alert('Message sent successfully!');
+							form.reset();
+						})
+						.catch(error => {
+							console.error('Error:', error);
+							alert('An error occurred. Please try again.');
+						});
+				});
+			}
+		});
+	</script>
 </body>
 
 </html>
@@ -60,8 +60,9 @@
 				<div class="inner">
 					<h1>Cloud Evangilist</h1>
 					<p>Gustav V. Kiewiets RESUME
-					<br/>
-					<a href="Workspaces/my-website/amplify.v2.prod/documents/Gustav_Kiewiets_Resume.pdf" download>Download Link</a>
+						<br />
+						<a href="Workspaces/my-website/amplify.v2.prod/documents/Gustav_Kiewiets_Resume.pdf"
+							download>Download Link</a>
 					</p>
 				</div>
 			</div>
@@ -72,7 +73,7 @@
 					<li><a href="#github">Github</a></li>
 					<li><a href="#certifications">CERTIFICATIONS</a></li>
 					<li><a href="#contact">Contact</a></li>
-					
+
 				</ul>
 			</nav>
 		</header>
@@ -97,9 +98,9 @@
 				precision. My background in healthcare combined with technical expertise gives me a unique perspective
 				in understanding and meeting business needs.</p>
 				<p>At the core i am a life-long learner that enjoys being int the forefront of cloud innovative
-				technologies that simplify complex solutions. I love using my ever-growing skills to
-				experiment,build projects and find the best possible way to understand and explain cloud concepts
-				using simple illustrations that resonate with people.</p>
+					technologies that simplify complex solutions. I love using my ever-growing skills to
+					experiment,build projects and find the best possible way to understand and explain cloud concepts
+					using simple illustrations that resonate with people.</p>
 			</article>
 
 
@@ -233,12 +234,10 @@
 			<article id="certifications">
 				<h2 class="major">Certifications</h2>
 				<span class="image main
+				<span class=" image main"><img src="images/intro.jpg" alt="" /></span>
 				<span class="image main"><img src="images/intro.jpg" alt="" /></span>
 				<span class="image main"><img src="images/intro.jpg" alt="" /></span>
 				<span class="image main"><img src="images/intro.jpg" alt="" /></span>
-				<span class="image main"><img src="images/intro.jpg" alt="" /></span>
-
-
 			</article>
 
 			<!-- Contact -->
@@ -249,20 +248,19 @@
 					<div class="fields">
 						<div class="field half">
 							<label for="name">Name</label>
-							<input type="text" name="name" id="name" />
+							<input type="text" name="name" id="name" required />
 						</div>
 						<div class="field half">
 							<label for="email">Email</label>
-							<input type="text" name="email" id="email" />
+							<input type="email" name="email" id="email" required />
 						</div>
 						<div class="field">
 							<label for="message">Message</label>
-							<textarea name="message" id="message" rows="4"></textarea>
+							<textarea name="message" id="message" rows="4" required></textarea>
 						</div>
 					</div>
 					<ul class="actions">
-						<li><input type="submit" value="Send Message" class="primary" onclick="submitForm(event)" />
-						</li>
+						<li><input type="submit" value="Send Message" class="primary" /></li>
 						<li><input type="reset" value="Reset" /></li>
 					</ul>
 				</form>
@@ -275,7 +273,6 @@
 								class="label">Medium</span></a></li>
 					<li><a href="https://github.com/gravitykloud-tech" class="icon brands fa-github"><span
 								class="label">GitHub</span></a></li>
-
 				</ul>
 			</article>
 
