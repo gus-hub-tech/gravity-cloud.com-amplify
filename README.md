@@ -47,7 +47,7 @@ This repository leverages the following technologies:
 
 ## 📝 Getting Started
 
-You can view the live portfolio at [gravity-cloud.com](https://main.d28epes9lsan4o.amplifyapp.com)
+You can view the live portfolio at [gus-cloud.com](https://main.d28epes9lsan4o.amplifyapp.com)
 
 To run locally:
 
