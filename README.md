@@ -43,13 +43,11 @@ This repository leverages the following technologies:
 
 ![image](https://github.com/user-attachments/assets/4c1eeaaa-a607-4204-bd87-29aed3351564)
 
-
-
 ---
 
 ## 📝 Getting Started
 
-You can view the live portfolio at [gravity-cloud.com](https://gravity-cloud.com) (if deployed).
+You can view the live portfolio at [gravity-cloud.com](https://main.d28epes9lsan4o.amplifyapp.com)
 
 To run locally:
 
@@ -78,10 +76,6 @@ Feel free to open issues or submit pull requests.
 - **Amplify-Website**: https://main.d28epes9lsan4o.amplifyapp.com
 
 ---
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
 
 ---
 
