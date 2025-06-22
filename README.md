@@ -54,7 +54,7 @@ To run locally:
 1. **Clone the repo**
     ```bash
     git clone https://github.com/gus-hub-tech/gravity-cloud.com-amplify.git
-    cd gravity-cloud.com
+    cd gus-cloud.com
     ```
 
 2. **Open `index.html` in your browser**  
