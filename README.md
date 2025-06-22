@@ -53,7 +53,7 @@ To run locally:
 
 1. **Clone the repo**
     ```bash
-    git clone https://github.com/gus-hub-tech/gravity-cloud.com-amplify.git
+    git clone https://github.com/gus-hub-tech/gus-cloud.com-amplify.git
     cd gus-cloud.com
     ```
 
