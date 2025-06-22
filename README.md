@@ -1,4 +1,4 @@
-# gravity-cloud.com website | portfolio
+# gus-cloud.com website | portfolio
 
 ## 🌐 About Me
 
