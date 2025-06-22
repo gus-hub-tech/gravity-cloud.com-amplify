@@ -41,7 +41,8 @@ This repository leverages the following technologies:
 
 ## 📸 Preview
 
-![site-image](https://github.com/user-attachments/assets/a0d19af9-2419-46f1-a973-dedaade274d6)
+![image](https://github.com/user-attachments/assets/4c1eeaaa-a607-4204-bd87-29aed3351564)
+
 
 
 ---
