@@ -75,8 +75,7 @@ Feel free to open issues or submit pull requests.
 
 - **Email**: gustav.kiewiets@hotmail.com
 - **LinkedIn**: www.linkedin.com/in/gus88
-- **Website**: [gravity-cloud.com](https://gravity-cloud.com)
-- **Amplify-Website**: 
+- **Amplify-Website**: https://main.d28epes9lsan4o.amplifyapp.com
 
 ---
 
