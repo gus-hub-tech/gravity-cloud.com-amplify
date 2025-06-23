@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome to my landing page!</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">Cloud<span> Evangelist</span></div>
+    <nav>
+      <ul>
+        <li>
+          <div style="text-align:center;"></div>
+        <li><a href="about.html"><i class="fa-solid fa-user"></i> About</a></li>
+        <li><a href="qualifications.html"><i class="fa-solid fa-graduation-cap"></i> Qualifications</a></li>
+        <li><a href="tools&platforms.html"><i class="fa-solid fa-toolbox"></i> Tools & Platforms</a></li>
+        <li><a href="#"><i class="fa-solid fa-location-dot"></i> Location</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Hello & Welcome,It's</h2>
+      <h1>Gustav V. Kiewiets</h1>
+      <h3>
+        <span style="color:#fff;">I'm a</span>
+        <span class="rotating-titles">
+          <span class="rotating-highlight" style="color:#00fff7;">Linux Network Administrator</span>
+          <span class="rotating-highlight" style="color:#00fff7;">Solutions Architect</span>
+        </span>
+      </h3>
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/gus88" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/gus-hub-tech" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://medium.com/@gustav.kiewiets" title="Medium"><i class="fab-brands fa-medium"></i></a>
+
+      </div>
+      <div class="hero-buttons">
+        <a href="https://gus-resume.s3.af-south-1.amazonaws.com/Gustav+V.+Kiewiets_Resume.pdf"
+          class="btn-primary">Download Resume</a>
+        <a href="contact.html" class="btn-primary" target="_blank" rel="noopener">
+          <i class="fa-solid fa-envelope"></i> Contact
+        </a>
+      </div>
+    </div>
+    <div class="hero-image-container">
+      <div class="hero-image-circle">
+        <img src="images/Gustav V. Kiewiets.jpg" alt="Gustav V. Kiewiets" />
+      </div>
+    </div>
+  </section>
+  <script>
+    const titles = document.querySelectorAll('.rotating-titles span');
+    let current = 0;
+    function showTitle(idx) {
+      titles.forEach((el, i) => {
+        el.classList.toggle('active', i === idx);
+      });
+    }
+    showTitle(current);
+    setInterval(() => {
+      current = (current + 1) % titles.length;
+      showTitle(current);
+    }, 2000); // Change every 2 seconds
+  </script>
+</body>
+
+</html>
