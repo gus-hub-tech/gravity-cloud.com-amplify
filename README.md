@@ -1,4 +1,4 @@
-# gus-cloud.com website | portfolio
+# gus-amplify-website | portfolio
 
 ## 🌐 About Me
 
