@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact | Gustav V. Kiewiets</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      body {
+        background: #111;
+        color: #fff;
+        min-height: 100vh;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .contact-container {
+        background: #181818;
+        padding: 2rem 2.5rem;
+        border-radius: 16px;
+        box-shadow: 0 0 32px #00fff766;
+        max-width: 400px;
+        width: 100%;
+        color: #fff;
+        position: relative;
+      }
+      .contact-container h2 {
+        margin-top: 0;
+        color: #00fff7;
+        text-align: center;
+      }
+      .contact-container label {
+        display: block;
+        margin: 1rem 0 0.3rem 0;
+        font-weight: 500;
+      }
+      .contact-container input,
+      .contact-container textarea {
+        width: 100%;
+        padding: 0.7rem;
+        border-radius: 8px;
+        border: 1px solid #333;
+        background: #222;
+        color: #fff;
+        margin-bottom: 1rem;
+        font-size: 1rem;
+      }
+      .contact-container textarea {
+        resize: vertical;
+      }
+      .contact-container .actions {
+        display: flex;
+        justify-content: flex-end;
+        gap: 1rem;
+      }
+      .contact-container .btn {
+        background: #00fff7;
+        color: #111;
+        border: none;
+        padding: 0.7rem 1.5rem;
+        border-radius: 32px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.2s, color 0.2s;
+      }
+      .contact-container .btn:hover {
+        background: #00cfc7;
+        color: #fff;
+      }
+      @media (max-width: 500px) {
+        .contact-container {
+          padding: 1rem 0.5rem;
+        }
+      }
+    </style>
+</head>
+<body>
+    <div class="contact-container">
+        <h2>Contact Me</h2>
+        <form method="post" action="https://tmlwb24aff.execute-api.af-south-1.amazonaws.com/Production_Stage/SendMailFunctionSES">
+          <label for="name">Name</label>
+          <input type="text" name="name" id="name" required />
+
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" required />
+
+          <label for="message">Message</label>
+          <textarea name="message" id="message" rows="4" required></textarea>
+
+          <div class="actions">
+            <button type="submit" class="btn">Send</button>
+            <button type="reset" class="btn">Reset</button>
+          </div>
+        </form>
+        <div id="success-message" style="display:none; color:#00fff7; text-align:center; margin-top:1rem; font-weight:600;">
+          Message sent successfully!
+        </div>
+        <script>
+          document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            document.getElementById('success-message').style.display = 'block';
+            this.reset();
+            setTimeout(() => {
+              document.getElementById('success-message').style.display = 'none';
+              window.location.href = "index.html";
+            }, 4000);
+          });
+        </script>
+    </div>
+</body>
+</html>

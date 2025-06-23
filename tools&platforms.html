@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tools & Platforms | Gustav V. Kiewiets</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+  <style>
+    body {
+      background: #181818;
+      color: #fff;
+      font-family: 'Poppins', Arial, sans-serif;
+      margin: 0;
+      min-height: 100vh;
+    }
+    .tools-container {
+      max-width: 900px;
+      margin: 48px auto;
+      padding: 2.5rem 2rem;
+      background: #181818;
+      border-radius: 18px;
+      box-shadow: 0 0 32px #00fff766;
+    }
+    .tools-title {
+      text-align: center;
+      color: #00fff7;
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 2.5rem;
+      letter-spacing: 1px;
+    }
+    .tools-sections {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2.5rem;
+      justify-content: center;
+      align-items: flex-start;
+    }
+    .tools-block {
+      flex: 1 1 340px;
+      min-width: 300px;
+      max-width: 420px;
+      display: flex;
+      flex-direction: column;
+    }
+    .tools-grid {
+      display: grid !important;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.2rem;
+      width: 100%;
+    }
+    .tool-box {
+      background: #222;
+      border-radius: 10px;
+      padding: 1.5rem 1rem;
+      min-width: 0;
+      max-width: 100%;
+      text-align: center;
+      box-shadow: 0 0 12px #00fff733;
+      transition: transform 0.2s, box-shadow 0.2s;
+      border: 2px solid transparent;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 120px;
+    }
+    .tool-box:hover {
+      transform: translateY(-8px) scale(1.04);
+      box-shadow: 0 0 24px #00fff7cc;
+      border: 2px solid #00fff7;
+    }
+    .tool-box i {
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+      color: #00fff7;
+    }
+    .tool-box .tool-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+      color: #fff;
+    }
+    .tool-box .tool-type {
+      font-size: 0.95rem;
+      color: #00fff7;
+      margin-bottom: 0;
+      display: block;
+    }
+    @media (max-width: 900px) {
+      .tools-sections {
+        flex-direction: column;
+        gap: 2rem;
+        align-items: stretch;
+      }
+      .tools-block {
+        max-width: 100%;
+      }
+      .tools-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    @media (max-width: 600px) {
+      .tools-grid {
+        grid-template-columns: 1fr;
+      }
+      .tool-box {
+        height: auto;
+        padding: 1.2rem 0.7rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="tools-container">
+    <div class="tools-title">Tools & Platforms</div>
+    <div class="tools-sections">
+      <!-- Tools Section -->
+      <div class="tools-block">
+        <h2 style="color:#00fff7; text-align:center; margin-bottom:1.2rem; letter-spacing:1px;">Tools</h2>
+        <div class="tools-grid">
+          <div class="tool-box">
+            <i class="fab fa-github"></i>
+            <div class="tool-title">GitHub</div>
+            <span class="tool-type">Version Control</span>
+          </div>
+          <div class="tool-box">
+            <i class="fab fa-git-alt"></i>
+            <div class="tool-title">Git</div>
+            <span class="tool-type">Version Control</span>
+          </div>
+          <div class="tool-box">
+            <i class="fab fa-python"></i>
+            <div class="tool-title">Python</div>
+            <span class="tool-type">Programming Language</span>
+          </div>
+          <div class="tool-box">
+            <i class="fab fa-docker"></i>
+            <div class="tool-title">Docker</div>
+            <span class="tool-type">Containerization</span>
+          </div>
+          <div class="tool-box">
+            <i class="fab fa-slack"></i>
+            <div class="tool-title">Slack</div>
+            <span class="tool-type">Collaboration</span>
+          </div>
+          <div class="tool-box">
+            <i class="fa-brands fa-terraform"></i>
+            <div class="tool-title">Terraform</div>
+            <span class="tool-type">IaC</span>
+          </div>
+          <div class="tool-box">
+            <i class="fab fa-react"></i>
+            <div class="tool-title">React</div>
+            <span class="tool-type">Frontend Framework</span>
+          </div>
+          <div class="tool-box">
+            <i class="fa-brands fa-python"></i>
+            <div class="tool-title">Django</div>
+            <span class="tool-type">Web Framework</span>
+          </div>
+        </div>
+      </div>
+      <!-- Platforms Section -->
+      <div class="tools-block">
+        <h2 style="color:#00fff7; text-align:center; margin-bottom:1.2rem; letter-spacing:1px;">Platforms</h2>
+        <div class="tools-grid">
+          <div class="tool-box">
+            <i class="fab fa-aws"></i>
+            <div class="tool-title">AWS</div>
+            <span class="tool-type">Cloud Platform</span>
+          </div>
+          <div class="tool-box">
+            <i class="fab fa-linux"></i>
+            <div class="tool-title">Linux</div>
+            <span class="tool-type">Operating System</span>
+          </div>
+          <div class="tool-box">
+            <i class="fab fa-ubuntu"></i>
+            <div class="tool-title">Ubuntu</div>
+            <span class="tool-type">Linux Distro</span>
+          </div>
+          <div class="tool-box">
+            <i class="fab fa-windows"></i>
+            <div class="tool-title">Windows</div>
+            <span class="tool-type">Operating System</span>
+          </div>
+          <div class="tool-box">
+            <i class="fab fa-node-js"></i>
+            <div class="tool-title">Node.js</div>
+            <span class="tool-type">Runtime</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:2.5rem;">
+      <a href="index.html" class="btn" style="background:#00fff7; color:#111; padding:0.7rem 2rem; border-radius:32px; text-decoration:none; font-weight:600; transition:background 0.2s, color 0.2s;">
+        &#8592; Return Home
+      </a>
+    </div>
+  </div>
+</body>
+</html>
