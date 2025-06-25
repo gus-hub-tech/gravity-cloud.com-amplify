@@ -140,20 +140,11 @@
     </style>
 </head>
 <body>
-  <nav aria-label="Main navigation">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="qualifications.html">Qualifications</a></li>
-      <li><a href="tools&platforms.html">Tools & Platforms</a></li>
-      <li><a href="recommendations.html">Recommendation Letters</a></li>
-      <li><a href="contact.html" aria-current="page">Contact</a></li>
-    </ul>
-  </nav>
+
   <div class="container">
     <div class="contact-card">
       <h2>Contact Me</h2>
-      <form method="post" action="https://tmlwb24aff.execute-api.af-south-1.amazonaws.com/Production_Stage/SendMailFunctionSES">
+      <form id="contactForm" method="post" action="https://tmlwb24aff.execute-api.af-south-1.amazonaws.com/Production_Stage/SendMailFunctionSES">
         <label for="name">Name</label>
         <input type="text" name="name" id="name" required />
 
@@ -175,14 +166,43 @@
     </div>
   </div>
   <script>
-    document.querySelector('form').addEventListener('submit', function(e) {
+    // This script will POST the form data as JSON and ensure all fields are sent to the backend.
+    document.getElementById('contactForm').addEventListener('submit', async function(e) {
       e.preventDefault();
-      document.getElementById('success-message').style.display = 'block';
-      this.reset();
-      setTimeout(() => {
-        document.getElementById('success-message').style.display = 'none';
-        window.location.href = "index.html";
-      }, 4000);
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      // Prepare the payload
+      const payload = {
+        name,
+        email,
+        message
+      };
+
+      // Send the data as JSON to the API endpoint
+      try {
+        const response = await fetch(this.action, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(payload)
+        });
+
+        if (response.ok) {
+          document.getElementById('success-message').style.display = 'block';
+          this.reset();
+          setTimeout(() => {
+            document.getElementById('success-message').style.display = 'none';
+            window.location.href = "index.html";
+          }, 4000);
+        } else {
+          alert('There was an error sending your message. Please try again later.');
+        }
+      } catch (error) {
+        alert('There was an error sending your message. Please try again later.');
+      }
     });
   </script>
 </body>
