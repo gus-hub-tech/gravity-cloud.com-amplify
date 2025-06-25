@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Letters of Recommendation</title>
+    <link rel="icon" type="image/png" href="favicon.png">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -19,6 +21,29 @@
             text-align: center;
             color: #2c3e50;
         }
+        nav {
+            width: 100%;
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(44,62,80,0.05);
+            margin-bottom: 30px;
+        }
+        nav ul {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            list-style: none;
+            margin: 0;
+            padding: 16px 0;
+        }
+        nav a {
+            color: #2980b9;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.05rem;
+        }
+        nav a:hover {
+            color: #1c5d8c;
+        }
         .recommendations {
             display: flex;
             gap: 30px;
@@ -26,12 +51,23 @@
             margin-top: 40px;
             flex-wrap: wrap;
         }
+        @media (max-width: 900px) {
+            .recommendations {
+                flex-direction: column;
+                align-items: center;
+            }
+            .card {
+                width: 95%;
+                max-width: 420px;
+            }
+        }
         .card {
             background: #fff;
             border-radius: 12px;
             box-shadow: 0 4px 16px rgba(44,62,80,0.08);
             padding: 30px 24px 20px 24px;
             width: 420px;
+            max-width: 100%;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
@@ -61,16 +97,18 @@
             transition: background 0.2s;
             text-decoration: none;
         }
-        .btn:hover {
+        .btn:hover, .btn:focus {
             background: #1c5d8c;
+            outline: 2px solid #1c5d8c;
         }
         .home-btn {
             display: block;
             margin: 40px auto 0 auto;
             background: #27ae60;
         }
-        .home-btn:hover {
+        .home-btn:hover, .home-btn:focus {
             background: #1e8747;
+            outline: 2px solid #1e8747;
         }
         .view-link {
             margin-top: 10px;
@@ -79,38 +117,48 @@
             font-size: 0.98rem;
             cursor: pointer;
         }
-        .view-link:hover {
+        .view-link:hover, .view-link:focus {
             color: #1c5d8c;
+            outline: 2px solid #1c5d8c;
         }
     </style>
 </head>
 <body>
+    <nav aria-label="Main navigation">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="qualifications.html">Qualifications</a></li>
+            <li><a href="tools&platforms.html">Tools & Platforms</a></li>
+            <li><a href="recommendations.html" aria-current="page">Recommendation Letters</a></li>
+        </ul>
+    </nav>
     <div class="container">
         <h1>Letters of Recommendation</h1>
-        <div class="recommendations">
-            <div class="card">
+        <section class="recommendations">
+            <article class="card">
                 <h2>Recommendation from Dr. Jane Smith</h2>
                 <p>
                     I am pleased to recommend John Doe for your program. John has consistently demonstrated exceptional skills in problem-solving, teamwork, and leadership throughout his time at our institution. His dedication and passion for learning set him apart from his peers.
                 </p>
-                <a class="view-link" href="recommendation1.html" target="_blank">View Full Letter</a>
+                <a class="view-link" href="recommendation1.html" target="_blank" rel="noopener">View Full Letter</a>
                 <div class="buttons">
-                    <a class="btn" href="recommendation1.pdf" download>Download PDF</a>
-                    <a class="btn" href="recommendation1.docx" download>Download DOCX</a>
+                    <a class="btn" href="recommendation1.pdf" download aria-label="Download Dr. Jane Smith's recommendation as PDF">Download PDF</a>
+                    <a class="btn" href="recommendation1.docx" download aria-label="Download Dr. Jane Smith's recommendation as DOCX">Download DOCX</a>
                 </div>
-            </div>
-            <div class="card">
+            </article>
+            <article class="card">
                 <h2>Recommendation from Prof. Alan Brown</h2>
                 <p>
                     John Doe is an outstanding individual with a strong work ethic and a keen intellect. His contributions to our research projects have been invaluable, and I am confident he will excel in any endeavor he pursues.
                 </p>
-                <a class="view-link" href="recommendation2.html" target="_blank">View Full Letter</a>
+                <a class="view-link" href="recommendation2.html" target="_blank" rel="noopener">View Full Letter</a>
                 <div class="buttons">
-                    <a class="btn" href="recommendation2.pdf" download>Download PDF</a>
-                    <a class="btn" href="recommendation2.docx" download>Download DOCX</a>
+                    <a class="btn" href="recommendation2.pdf" download aria-label="Download Prof. Alan Brown's recommendation as PDF">Download PDF</a>
+                    <a class="btn" href="recommendation2.docx" download aria-label="Download Prof. Alan Brown's recommendation as DOCX">Download DOCX</a>
                 </div>
-            </div>
-        </div>
+            </article>
+        </section>
         <a class="btn home-btn" href="index.html">Return Home</a>
     </div>
 </body>
