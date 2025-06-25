@@ -4,32 +4,72 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Qualifications Timeline | Gustav V. Kiewiets</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
   <style>
     body {
-      background: #181818;
-      color: #fff;
-      font-family: 'Poppins', Arial, sans-serif;
+      background: #f4f6fa;
+      color: #222;
+      font-family: Arial, sans-serif;
       margin: 0;
       min-height: 100vh;
+      padding: 0;
     }
-    .timeline-container {
-      width: 95%;
+    .container {
       max-width: 1100px;
-      margin: 60px auto 0 auto;
+      margin: 40px auto;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+    }
+    nav {
+      width: 100%;
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(44,62,80,0.05);
+      margin-bottom: 30px;
+    }
+    nav ul {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      list-style: none;
+      margin: 0;
+      padding: 16px 0;
+    }
+    nav a {
+      color: #2980b9;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.05rem;
+    }
+    nav a:hover {
+      color: #1c5d8c;
+    }
+    .timeline-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(44,62,80,0.08);
+      padding: 30px 24px 20px 24px;
+      width: 100%;
+      max-width: 100%;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
       position: relative;
-      padding: 40px 0 0 0;
     }
     .timeline-title {
       text-align: center;
       color: #00fff7;
-      font-size: 2.5rem;
+      font-size: 2.1rem;
       font-weight: 800;
       margin-bottom: 2.5rem;
       letter-spacing: 1.5px;
       text-shadow: 0 2px 12px #00fff799;
       text-transform: uppercase;
+      width: 100%;
     }
     .timeline {
       position: relative;
@@ -73,7 +113,7 @@
       padding-left: 0;
     }
     .timeline-event-content {
-      background: rgba(24,24,24,0.98);
+      background: rgba(244,246,250,0.98);
       border: 2.5px solid #00fff7;
       border-radius: 22px;
       padding: 28px 36px;
@@ -98,7 +138,7 @@
       font-size: 1.3rem;
       font-weight: 800;
       color: #00fff7;
-      background: #181818;
+      background: #f4f6fa;
       padding: 8px 22px;
       border-radius: 18px;
       border: 2.5px solid #00fff7;
@@ -130,7 +170,7 @@
     .timeline-event-content p {
       margin-bottom: 0;
       font-size: 1.08rem;
-      color: #e0e0e0;
+      color: #222;
       line-height: 1.6;
     }
     .timeline-badge {
@@ -140,7 +180,7 @@
       transform: translate(-50%, -50%);
       width: 38px;
       height: 38px;
-      background: #181818;
+      background: #fff;
       border: 4px solid #00fff7;
       border-radius: 50%;
       z-index: 5;
@@ -173,9 +213,38 @@
       letter-spacing: 0.5px;
       box-shadow: 0 2px 8px #00fff799;
     }
+    .btn {
+      background: #2980b9;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 10px 18px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn:hover, .btn:focus {
+      background: #1c5d8c;
+      outline: 2px solid #1c5d8c;
+    }
+    .home-btn {
+      display: block;
+      margin: 40px auto 0 auto;
+      background: #27ae60;
+    }
+    .home-btn:hover, .home-btn:focus {
+      background: #1e8747;
+      outline: 2px solid #1e8747;
+    }
     @media (max-width: 900px) {
-      .timeline-container {
-        padding: 10px 0;
+      .timeline-card {
+        width: 95%;
+        max-width: 420px;
+      }
+      .container {
+        padding: 10px;
       }
       .timeline-event,
       .timeline-event.left,
@@ -210,123 +279,130 @@
   </style>
 </head>
 <body>
-  <div class="timeline-container">
-    <div class="timeline-title">Qualifications Timeline</div>
-    <div class="timeline">
-      <!-- CCNA (2025, right) -->
-      <div class="timeline-event right">
-        <div class="timeline-badge"><i class="fa-solid fa-network-wired"></i></div>
-        <div class="timeline-year">2025</div>
-        <div class="timeline-event-content">
-          <span class="tag">Networking</span>
-          <h3><i class="fa-solid fa-certificate"></i>CCNA Certificate</h3>
-          <p>
-            Completed my CCNA (CISCO) Certificate for completing CCNA_2 (Routing and Switching).
-          </p>
+  <nav aria-label="Main navigation">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="qualifications.html" aria-current="page">Qualifications</a></li>
+      <li><a href="tools&platforms.html">Tools & Platforms</a></li>
+      <li><a href="recommendations.html">Recommendation Letters</a></li>
+    </ul>
+  </nav>
+  <div class="container">
+    <div class="timeline-card">
+      <div class="timeline-title">Qualifications Timeline</div>
+      <div class="timeline">
+        <!-- CCNA (2025, right) -->
+        <div class="timeline-event right">
+          <div class="timeline-badge"><i class="fa-solid fa-network-wired"></i></div>
+          <div class="timeline-year">2025</div>
+          <div class="timeline-event-content">
+            <span class="tag">Networking</span>
+            <h3><i class="fa-solid fa-certificate"></i>CCNA Certificate</h3>
+            <p>
+              Completed my CCNA (CISCO) Certificate for completing CCNA_2 (Routing and Switching).
+            </p>
+          </div>
+        </div>
+        <!-- CCNA Certificate (2025, left) -->
+        <div class="timeline-event left">
+          <div class="timeline-badge"><i class="fa-solid fa-network-wired"></i></div>
+          <div class="timeline-year">2025</div>
+          <div class="timeline-event-content">
+            <span class="tag">Networking</span>
+            <h3><i class="fa-solid fa-certificate"></i>CCNA Certificate</h3>
+            <p>
+              Completed my CCNA (CISCO) Certificate for completing CCNA_1 (Introduction to networks).
+            </p>
+          </div>
+        </div>
+        <!-- AWS AI/ML (2024, right) -->
+        <div class="timeline-event right">
+          <div class="timeline-badge"><i class="fa-solid fa-brain"></i></div>
+          <div class="timeline-year">2024</div>
+          <div class="timeline-event-content">
+            <span class="tag">AI/ML</span>
+            <h3><i class="fa-brands fa-aws"></i>AWS AI/ML</h3>
+            <p>
+              Completed the AWS AI/ML Foundations course, gaining foundational knowledge in artificial intelligence and machine learning concepts and applications on AWS.
+            </p>
+          </div>
+        </div>
+        <!-- LPIC-1 Certification (2023, left) -->
+        <div class="timeline-event left">
+          <div class="timeline-badge"><i class="fa-brands fa-linux"></i></div>
+          <div class="timeline-year">2023</div>
+          <div class="timeline-event-content">
+            <span class="tag">Linux</span>
+            <h3><i class="fa-brands fa-linux"></i>LPIC-1 Certification</h3>
+            <p>
+              Earned Linux Professional Institute Certification (LPIC-1), demonstrating proficiency in Linux system administration and troubleshooting.
+            </p>
+          </div>
+        </div>
+        <!-- AWS re/Start Graduate (2023, right) -->
+        <div class="timeline-event right">
+          <div class="timeline-badge"><i class="fa-brands fa-aws"></i></div>
+          <div class="timeline-year">2023</div>
+          <div class="timeline-event-content">
+            <span class="tag">Cloud</span>
+            <h3><i class="fa-brands fa-aws"></i>AWS re/Start Graduate</h3>
+            <p>
+              Graduated from the AWS re/Start program, gaining invaluable cloud computing skills in understanding the core AWS services and the role of a Solutions Architect.
+            </p>
+          </div>
+        </div>
+        <!-- Second IT Internship (2023, left) -->
+        <div class="timeline-event left">
+          <div class="timeline-badge"><i class="fa-solid fa-user-tie"></i></div>
+          <div class="timeline-year">2023</div>
+          <div class="timeline-event-content">
+            <span class="tag">Internship</span>
+            <h3><i class="fa-solid fa-user-tie"></i>Solutions Architect @ Praesignis</h3>
+            <p>
+              Completed a second internship as a Solutions Architect at Praesignis, focusing on AWS cloud solutions and infrastructure design.
+            </p>
+          </div>
+        </div>
+        <!-- AWS Cloud Practitioner (2022, right) -->
+        <div class="timeline-event right">
+          <div class="timeline-badge"><i class="fa-brands fa-aws"></i></div>
+          <div class="timeline-year">2022</div>
+          <div class="timeline-event-content">
+            <span class="tag">Cloud</span>
+            <h3><i class="fa-brands fa-aws"></i>AWS Cloud Practitioner</h3>
+            <p>
+              Achieved AWS Certified Cloud Practitioner, establishing a solid understanding of AWS cloud services and their applications.
+            </p>
+          </div>
+        </div>
+        <!-- First IT Internship (2021, left) -->
+        <div class="timeline-event left">
+          <div class="timeline-badge"><i class="fa-solid fa-user-graduate"></i></div>
+          <div class="timeline-year">2021</div>
+          <div class="timeline-event-content">
+            <span class="tag">Internship</span>
+            <h3><i class="fa-solid fa-user-graduate"></i>First IT Internship @ Xgile I.T</h3>
+            <p>
+              Gaining exposure and hands-on experience in Linux systems and cloud environments.
+            </p>
+          </div>
+        </div>
+        <!-- Clinical Engineer(2020, right) -->
+        <div class="timeline-event right">
+          <div class="timeline-badge"><i class="fa-solid fa-stethoscope"></i></div>
+          <div class="timeline-year">2020</div>
+          <div class="timeline-event-content">
+            <span class="tag">Healthcare</span>
+            <h3><i class="fa-solid fa-stethoscope"></i>Healthcare | Clinical - Engineer [Career End]</h3>
+            <p>
+              Worked as a Clinical Engineer, applying technical skills in a healthcare setting, which enhanced my problem-solving abilities and attention to detail.
+            </p>
+          </div>
         </div>
       </div>
-      <!-- CCNA Certificate (2025, left) -->
-      <div class="timeline-event left">
-        <div class="timeline-badge"><i class="fa-solid fa-network-wired"></i></div>
-        <div class="timeline-year">2025</div>
-        <div class="timeline-event-content">
-          <span class="tag">Networking</span>
-          <h3><i class="fa-solid fa-certificate"></i>CCNA Certificate</h3>
-          <p>
-            Completed my CCNA (CISCO) Certificate for completing CCNA_1 (Introduction to networks).
-          </p>
-        </div>
-      </div>
-      <!-- AWS AI/ML (2024, right) -->
-      <div class="timeline-event right">
-        <div class="timeline-badge"><i class="fa-solid fa-brain"></i></div>
-        <div class="timeline-year">2024</div>
-        <div class="timeline-event-content">
-          <span class="tag">AI/ML</span>
-          <h3><i class="fa-brands fa-aws"></i>AWS AI/ML</h3>
-          <p>
-            Completed the AWS AI/ML Foundations course, gaining foundational knowledge in artificial intelligence and machine learning concepts and applications on AWS.
-          </p>
-        </div>
-      </div>
-      <!-- LPIC-1 Certification (2023, left) -->
-      <div class="timeline-event left">
-        <div class="timeline-badge"><i class="fa-brands fa-linux"></i></div>
-        <div class="timeline-year">2023</div>
-        <div class="timeline-event-content">
-          <span class="tag">Linux</span>
-          <h3><i class="fa-brands fa-linux"></i>LPIC-1 Certification</h3>
-          <p>
-            Earned Linux Professional Institute Certification (LPIC-1), demonstrating proficiency in Linux system administration and troubleshooting.
-          </p>
-        </div>
-      </div>
-      <!-- AWS re/Start Graduate (2023, right) -->
-      <div class="timeline-event right">
-        <div class="timeline-badge"><i class="fa-brands fa-aws"></i></div>
-        <div class="timeline-year">2023</div>
-        <div class="timeline-event-content">
-          <span class="tag">Cloud</span>
-          <h3><i class="fa-brands fa-aws"></i>AWS re/Start Graduate</h3>
-          <p>
-            Graduated from the AWS re/Start program, gaining invaluable cloud computing skills in understanding the core AWS services and the role of a Solutions Architect.
-          </p>
-        </div>
-      </div>
-      <!-- Second IT Internship (2023, left) -->
-      <div class="timeline-event left">
-        <div class="timeline-badge"><i class="fa-solid fa-user-tie"></i></div>
-        <div class="timeline-year">2023</div>
-        <div class="timeline-event-content">
-          <span class="tag">Internship</span>
-          <h3><i class="fa-solid fa-user-tie"></i>Solutions Architect @ Praesignis</h3>
-          <p>
-            Completed a second internship as a Solutions Architect at Praesignis, focusing on AWS cloud solutions and infrastructure design.
-          </p>
-        </div>
-      </div>
-      <!-- AWS Cloud Practitioner (2022, right) -->
-      <div class="timeline-event right">
-        <div class="timeline-badge"><i class="fa-brands fa-aws"></i></div>
-        <div class="timeline-year">2022</div>
-        <div class="timeline-event-content">
-          <span class="tag">Cloud</span>
-          <h3><i class="fa-brands fa-aws"></i>AWS Cloud Practitioner</h3>
-          <p>
-            Achieved AWS Certified Cloud Practitioner, establishing a solid understanding of AWS cloud services and their applications.
-          </p>
-        </div>
-      </div>
-      <!-- First IT Internship (2021, left) -->
-      <div class="timeline-event left">
-        <div class="timeline-badge"><i class="fa-solid fa-user-graduate"></i></div>
-        <div class="timeline-year">2021</div>
-        <div class="timeline-event-content">
-          <span class="tag">Internship</span>
-          <h3><i class="fa-solid fa-user-graduate"></i>First IT Internship @ Xgile I.T</h3>
-          <p>
-            Gaining exposure and hands-on experience in Linux systems and cloud environments.
-          </p>
-        </div>
-      </div>
-      <!-- Clinical Engineer(2020, right) -->
-      <div class="timeline-event right">
-        <div class="timeline-badge"><i class="fa-solid fa-stethoscope"></i></div>
-        <div class="timeline-year">2020</div>
-        <div class="timeline-event-content">
-          <span class="tag">Healthcare</span>
-          <h3><i class="fa-solid fa-stethoscope"></i>Healthcare | Clinical - Engineer [Career End]</h3>
-          <p>
-            Worked as a Clinical Engineer, applying technical skills in a healthcare setting, which enhanced my problem-solving abilities and attention to detail.
-          </p>
-        </div>
-      </div>
+      <a class="btn home-btn" href="index.html">&#8592; Return Home</a>
     </div>
-  </div>
-  <div style="text-align:center; margin:40px 0;">
-    <a href="index.html" class="btn" style="background:#00fff7; color:#111; padding:0.7rem 2rem; border-radius:32px; text-decoration:none; font-weight:600; transition:background 0.2s, color 0.2s;">
-      &#8592; Return Home
-    </a>
   </div>
 </body>
 </html>
