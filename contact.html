@@ -173,11 +173,11 @@
       const email = document.getElementById('email').value.trim();
       const message = document.getElementById('message').value.trim();
 
-      // Prepare the payload
+      // Change this part in your frontend:
       const payload = {
-        "Full Name": name,
-        "Email": email,
-        "Message": message
+        "name": name,        // changed from "Full Name"
+        "email": email,      // changed from "Email"
+        "message": message   // changed from "Message"
       };
 
       // Send the data as JSON to the API endpoint
