@@ -173,10 +173,10 @@
       const email = document.getElementById('email').value.trim();
       const message = document.getElementById('message').value.trim();
 
-      // Change this part in your frontend:
+      // Prepare the payload - updated to match Lambda field names
       const payload = {
         "name": name,        // changed from "Full Name"
-        "email": email,      // changed from "Email"
+        "email": email,      // changed from "Email"  
         "message": message   // changed from "Message"
       };
 
