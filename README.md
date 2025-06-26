@@ -10,7 +10,7 @@ Hello! & Welcome to my portfolio! I'm a passionate Linux Network Administrator a
 
 This repository leverages the following technologies:
 
-- **SCSS**: Advanced styling with maintainable and modular CSS.
+- **AWS Services**: Amplify, ApiGateway,Lambda, SNS. 
 - **CSS**: Custom styles for responsive and visually appealing layouts.
 - **JavaScript**: Interactive features and dynamic content.
 - **HTML**: Semantic and accessible markup for web pages.
@@ -41,20 +41,20 @@ This repository leverages the following technologies:
 
 ## 📸 Preview
 
-![image](https://github.com/user-attachments/assets/4c1eeaaa-a607-4204-bd87-29aed3351564)
+https://github.com/user-attachments/assets/036113ef-e119-4c1f-88e8-602a68aeb513
 
 ---
 
 ## 📝 Getting Started
 
-You can view the live portfolio at [gus-cloud.com](https://main.d28epes9lsan4o.amplifyapp.com)
+You can view the live portfolio at [gus-amplify-site](https://main.d3d5cnpn2eqq65.amplifyapp.com)
 
 To run locally:
 
 1. **Clone the repo**
     ```bash
     git clone https://github.com/gus-hub-tech/gus-amplify-site.git
-    cd gus-cloud.com
+    cd gus-amplify-site
     ```
 
 2. **Open `index.html` in your browser**  
@@ -73,11 +73,11 @@ Feel free to open issues or submit pull requests.
 
 - **Email**: gustav.kiewiets@hotmail.com
 - **LinkedIn**: www.linkedin.com/in/gus88
-- **Amplify-Website**: https://main.d28epes9lsan4o.amplifyapp.com
+- **Amplify-Website**: https://main.d3d5cnpn2eqq65.amplifyapp.com
 
 ---
 
 ---
 
-> **Thank you for visiting my portfolio!**
+**Thank you for visiting my portfolio!**
 
