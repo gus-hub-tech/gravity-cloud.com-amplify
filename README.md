@@ -73,7 +73,7 @@ Feel free to open issues or submit pull requests.
 
 - **Email**: gustav.kiewiets@hotmail.com
 - **LinkedIn**: www.linkedin.com/in/gus88
-- **Amplify-Website**: https://main.d3d5cnpn2eqq65.amplifyapp.com
+- **Amplify-Website**: [gus-amplify-site](https://main.d3d5cnpn2eqq65.amplifyapp.com)
 
 ---
 
